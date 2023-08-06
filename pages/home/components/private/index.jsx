@@ -21,7 +21,7 @@ export default function index() {
           <div className={styles.subtitle}>
             Indulge in Latin American flavors with a global twist, served in a
             lush and casual yet refined setting. From their hydroponic farms to
-            their boundary-pushing cocktails, they've crafted an experience
+            their boundary-pushing cocktails, they&#39;ve crafted an experience
             tailored to thrill. Let their restaurant redefine your celebration
             with opulence and warmth.
           </div>
