@@ -1,0 +1,93 @@
+@import "styles/variables.scss";
+@import "styles/partials/_mixins.scss";
+
+
+.eventcard{
+    border: 1px solid #CAC8C7;
+    width: 22.4375rem;
+    @include mobile-breakpoint(){
+        width: 305px;
+    }
+
+    font-family: $regular-font;
+
+    .eventimage{
+        position: relative;
+        padding: 0.2px;
+        height: 16.4375rem;
+        width: 22.4375rem;
+
+        @include mobile-breakpoint(){
+            width: 303px;
+            height: 221.97px;
+        }
+    }
+
+    .eventcontent{
+        padding: 1.875rem;
+    }
+
+    .datetime{
+        color: $spanish-grey;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+
+    .title{
+        color: #000000;
+        font-size: 1.5rem;
+        line-height: 1.625rem;
+
+        @include tab-breakpoint(){
+            font-size: 20px;
+        }
+    }
+
+    .subtitle{
+        font-size: 1rem;
+        color: $spanish-grey;
+        margin-top: 1.25rem;
+
+        @include tab-breakpoint(){
+            font-size: 12px;
+            line-height: 19px;
+            margin-top: 14.82px;
+        }
+    }
+
+    .meta{
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .button{
+            background-color: $dark-crayola;
+            color: white;
+            padding: 0.9375rem 1.875rem;
+            width: fit-content;
+            font-size: 1rem;
+            cursor: pointer;
+            font-family: $bold-font;
+        }
+        span{
+            font-size: 1rem;
+            line-height: 1.1875rem;
+            color: #131616;
+            cursor: pointer;
+            transition: $fast-transition-speed;
+
+            &:hover{
+                color: $spanish-grey
+            }
+
+            &:active{
+                color: #131616;
+            }
+        }
+    }
+
+}

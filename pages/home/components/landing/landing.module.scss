@@ -1,0 +1,34 @@
+@import "styles/variables.scss";
+@import "styles/partials/_mixins.scss";
+
+.landing{
+    margin-top: -100px;
+    background-image: url("/images/pink.jpg");
+    background-blend-mode: multiply;
+    height: 40.3125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #0000002b;
+
+
+    @include tab-breakpoint(){
+        margin-top: 0;
+        & > div{
+            display: none;
+        }
+    }
+
+    @include mobile-breakpoint(){
+        background-image: url("/images/pink.jpg");
+        background-position: 0 -65px;
+        background-size: cover;
+    }
+
+    @include mobile-breakpoint(){
+        height: 363px;
+        background-color: white;
+    }
+}

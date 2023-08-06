@@ -1,0 +1,32 @@
+@import "styles/variables.scss";
+@import "styles/partials/_mixins.scss";
+
+.landing{
+    // background-image: url("/images/about.png");
+    background-position: center;
+    background-color: rgba(19, 22, 22,  0.3);
+    background-blend-mode: multiply;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    line-height: 4.75rem;
+
+
+    & > div{
+        max-width: 33.3125rem;
+        color: #FFFFFF;
+        font-size: 3.25rem;
+        font-family: $bold-font;
+    }
+
+    @include tab-breakpoint(){
+        margin-top: 0;
+        he
+        & > div{
+            margin-left: 0;
+        }
+    }
+
+}

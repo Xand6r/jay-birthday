@@ -1,0 +1,56 @@
+@import "styles/variables.scss";
+
+@mixin mobile-breakpoint {
+  @media (max-width: $mobile-breakpoint ){
+    @content;
+  }
+}
+
+@mixin tab-breakpoint {
+  @media (max-width: $tab-breakpoint ){
+    @content;
+  }
+}
+
+@mixin action-button-states{
+  transition: $fast-transition-speed;
+  font-family: $bold-font !important;
+  &:hover{
+    background-color: $dark-crayola;
+    color: white;
+    svg{
+        fill: $dark-crayola;
+        path{
+            stroke: white;
+        }
+      }
+  }
+
+
+  &:active{
+      background-color:white;
+      color: $dark-crayola;
+      svg{
+          fill: white;
+          path{
+              stroke: $dark-crayola;
+          }
+      }
+  }
+
+}
+
+@mixin white-button-states{
+  transition: $fast-transition-speed;
+  font-family: $bold-font !important;
+  &:hover{
+    color: white;
+    background-color: $dark-crayola;
+  }
+
+  &:active{
+    background-color: white;
+    color: $dark-crayola;  
+  }
+
+}

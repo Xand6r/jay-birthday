@@ -1,0 +1,136 @@
+@import "styles/variables.scss";
+@import "styles/partials/_mixins.scss";
+
+.menu{
+
+    width: fit-content;//todo remove me
+    margin: 72px auto;
+    width: 1137px;
+
+    @include tab-breakpoint(){
+        width: fit-content;
+    }
+
+    @include mobile-breakpoint(){
+        width: 100%;
+    }
+
+    .not_available{
+        font-size: 18px;
+        font-family: $regular-font;
+    }
+
+    .filters{
+        font-family: $bold-font;
+        border-top: 1px solid #B76E79;
+        border-bottom: 1px solid #B76E79;
+        margin-top: 35px;
+        margin-bottom: 50px;
+        display: flex;
+        
+        @include mobile-breakpoint(){
+            margin-top: 20px;
+            margin-bottom: 27px;
+        }
+
+        .left{
+            display: flex;
+            gap: 2px;
+            font-size: 18px;
+            line-height: 30px;
+
+            @include mobile-breakpoint(){
+                font-size: 14px;
+                line-height: 23px;
+                gap: 1px;
+            }
+
+            & > span{
+                padding-top: 20px;
+                padding-bottom: 17px;
+                padding-left: 23px;
+                padding-right: 23px;
+                cursor: pointer;
+                transition: $fast-transition-speed;
+                border-bottom: 3px solid transparent;
+                color: $silver;
+                display: inline-block;
+                text-transform: capitalize;
+
+                @include mobile-breakpoint(){
+                    padding-left: 13px;
+                    padding-right: 13px;
+                }
+
+                &.__active{
+                    border-bottom: 3px solid $dark-crayola;
+                    color: $dark-crayola;
+                }
+            }
+
+            .divider{
+                border-left: 1px solid silver;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                margin-left: 25px;
+
+                @include mobile-breakpoint(){
+                    display: none;
+                }
+            }
+        }
+
+        .right{
+            display: flex;
+            align-items: center;
+            margin-left: 50px;
+            flex-basis: 50%;
+
+            @include tab-breakpoint(){
+                flex-basis: unset;
+            }
+
+            input{
+                background-image: url("/images/icon.svg");
+                background-repeat: no-repeat;
+                outline: none;
+                padding-left: 34px;
+                font-size: 18px;
+                line-height: 30px;
+                color: #CAC8C7;
+                font-family: $regular-font;
+                background-position-y: center;
+                border: 0;
+                color: $dark-crayola;
+                width: 100%;
+
+                &::placeholder{
+                    color: $silver;
+                }
+            }
+
+            @include mobile-breakpoint(){
+                display: none;
+            }
+        }
+
+    }
+
+    .menuitems{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include tab-breakpoint(){
+            padding-left: $tab-padding-x;
+            padding-right: $tab-padding-x;;
+        }
+
+        @include mobile-breakpoint(){
+            padding-left: $mobile-padding-x;
+            padding-right: $mobile-padding-x;;
+        }
+
+    }
+
+}
