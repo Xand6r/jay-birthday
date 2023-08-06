@@ -54,6 +54,7 @@ export default function Footer() {
       toast.error("There was an error signing in");
     } finally{
       setLoading(false);
+      toast.error("See you soon!!!");
     }
   };
 
@@ -67,6 +68,7 @@ export default function Footer() {
           {isUserLoggedIn
             ? "Please provide your mail to rsvp for the event"
             : "Provide password to proceed to see event details"}
+            <br />
         </div>
 
         <div className={styles.input_wrapper}>
