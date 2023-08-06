@@ -31,12 +31,15 @@ export default function Footer() {
 
   const [textContent, setTextContent] = useState("");
   const [isUserLoggedIn, setIsUserLoggedIn] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setIsUserLoggedIn(isLoggedIn());
   }, []);
 
   const rsvp = async () => {
+    if(loading) return;
+    setLoading(true);
     if (!textContent.match(validRegex)) {
       toast.error("Invalid email address", { theme: "colored" });
     }
@@ -47,11 +50,11 @@ export default function Footer() {
       });
 
       console.log(response);
-      alert("working");
     } catch (err) {
       toast.error("There was an error signing in");
+    } finally{
+      setLoading(false);
     }
-
   };
 
   return (
@@ -72,12 +75,13 @@ export default function Footer() {
             onChange={(e) => setTextContent(e.target.value)}
             type="text"
             placeholder={isUserLoggedIn ? "Enter email" : `Enter password`}
+            disabled={loading}
           />
           <div
             onClick={() => (isLoggedIn() ? rsvp() : loginUser())}
             className={styles.subscribe_button}
           >
-            Submit
+            {loading ? "Loading..." : "Submit"}
           </div>
         </div>
       </section>
