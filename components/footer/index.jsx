@@ -54,7 +54,7 @@ export default function Footer() {
       toast.error("There was an error signing in");
     } finally{
       setLoading(false);
-      toast.error("See you soon!!!");
+      toast.success("See you soon!!!");
     }
   };
 
