@@ -66,7 +66,7 @@ export default function Index({
           end: "+=200",
           scrub: true,
         },
-        background: "#B76E79",
+        background: "#DE7684",
         duration: 1,
       }
     );

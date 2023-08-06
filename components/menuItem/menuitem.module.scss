@@ -1,54 +1,53 @@
 @import "styles/variables.scss";
 @import "styles/partials/_mixins.scss";
 
+.menuitem {
+  border: 1px solid #de7684;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  line-height: 23.21px;
+  @include mobile-breakpoint() {
+    flex-direction: column;
+    gap: 15px;
+  }
 
-.menuitem{
-    border: 1px solid #B76E79;
-    padding: 1.5rem 1.25rem;
+  .price {
+    color: $chestnut;
+    font-size: 1.375rem;
+    font-family: $bold-font;
+    @include mobile-breakpoint() {
+      margin-left: 25px;
+    }
+  }
+
+  .index {
+    font-family: $bold-font;
+    font-size: 22px;
+  }
+
+  .text_wrapper {
     display: flex;
-    justify-content: space-between;
-    line-height: 23.21px;
-    @include mobile-breakpoint(){
-        flex-direction: column;
-        gap: 15px;
-    }
+    gap: 14px;
 
-    .price{
-        color: $chestnut;
-        font-size: 1.375rem;
-        font-family: $bold-font;
-        @include mobile-breakpoint(){
-            margin-left: 25px;
-        }
-    }
-
-    .index{
+    .content {
+      .content__heading {
         font-family: $bold-font;
         font-size: 22px;
-    }
-
-    .text_wrapper{
-        display: flex;
-        gap: 14px;
-
-        .content{
-            .content__heading{
-                font-family: $bold-font;
-                font-size: 22px;
-                text-transform: capitalize;
-                @include mobile-breakpoint(){
-                    line-height: 1.4em;
-                }
-                span{
-                    font-size: 14px;
-                }
-            }
-            .content__subheading{
-                font-size: 18px;
-                margin-top: 5px;
-                font-family: $regular-font;
-                color: $spanish-grey;
-            }
+        text-transform: capitalize;
+        @include mobile-breakpoint() {
+          line-height: 1.4em;
         }
+        span {
+          font-size: 14px;
+        }
+      }
+      .content__subheading {
+        font-size: 18px;
+        margin-top: 5px;
+        font-family: $regular-font;
+        color: $spanish-grey;
+      }
     }
+  }
 }

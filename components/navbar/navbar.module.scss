@@ -1,137 +1,129 @@
 @import "styles/variables.scss";
 @import "styles/partials/_mixins.scss";
 
-.navbar{
-    height: 6.25rem;
-    width: 100%;
+.navbar {
+  height: 6.25rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  gap: 18rem;
+  font-family: $bold-font;
+  background-color: transparent;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  @include tab-breakpoint() {
+    background-color: $spanish-grey;
+    justify-content: space-between;
+    padding: 0 $tab-padding-x;
+  }
+
+  @include mobile-breakpoint() {
+    padding: 0 $mobile-padding-x;
+    height: 65px;
+  }
+
+  .left_section {
     display: flex;
+    font-size: 1rem;
+    text-transform: capitalize;
+    gap: 2.1875rem;
+
+    & > div {
+      cursor: pointer;
+    }
+
+    @include tab-breakpoint() {
+      display: none;
+    }
+  }
+
+  .mobile_hamburger {
+    display: none;
+    position: relative;
+    cursor: pointer;
+
+    @include tab-breakpoint() {
+      display: block;
+    }
+  }
+
+  .logo_container {
+    z-index: 1;
+    width: 6.9375rem;
+    position: relative;
+    height: 3.3125rem;
+    right: 9px;
+    bottom: -2px;
+
+    @include mobile-breakpoint() {
+      width: 73px;
+      height: 35px;
+    }
+  }
+
+  .right_section {
+    display: flex;
+    gap: 1.875rem;
     align-items: center;
-    flex-direction: row;
-    justify-content: center;
-    gap: 18rem;
-    font-family: $bold-font;
-    background-color: transparent;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 2;    
 
-
-    @include tab-breakpoint(){
-        background-color: $spanish-grey;
-        justify-content: space-between;
-        padding: 0 $tab-padding-x;
+    & > div {
+      cursor: pointer;
     }
 
-    @include mobile-breakpoint(){
-        padding: 0 $mobile-padding-x;
-        height: 65px;
+    .reservation_button {
+      padding: 0.9375rem 1.875rem;
+      background: #ffffff;
+      color: black;
+      transition: $fast-transition-speed;
+      @include action-button-states;
     }
 
-    .left_section{
-        display: flex;
-        font-size: 1rem;
-        text-transform: capitalize;
-        gap: 2.1875rem;
-
-        & > div{
-            cursor: pointer;
-        }
-
-        @include tab-breakpoint(){
-            display: none;
-        }
+    @include tab-breakpoint() {
+      display: none !important;
+    }
+  }
+  &.light {
+    background-color: #de7684;
+  }
+  &.dark {
+    color: $dark-crayola;
+    background-color: white;
+    @include mobile-breakpoint() {
+      background-color: white;
+    }
+    .mobile_hamburger {
+      rect {
+        fill: black;
+      }
     }
 
-    .mobile_hamburger{
-        display: none;
-        position: relative;
-        cursor: pointer;
-
-        @include tab-breakpoint(){
-            display: block ;
-        }
-    }
-
-    .logo_container{
-        z-index: 1;
-        width: 6.9375rem;
-        position: relative;
-        height: 3.3125rem;
-        right: 9px;
-        bottom: -2px;
-         
-        @include mobile-breakpoint(){
-            width: 73px;
-            height: 35px;
-        }
-
-    }
-
-
-    .right_section{
-        display: flex;
-        gap: 1.875rem;
-        align-items: center;
-
-        & > div{
-             cursor: pointer;
-        }
-        
-        .reservation_button{
-            padding: 0.9375rem  1.875rem;
-            background: #FFFFFF;
-            color: black;
-            transition: $fast-transition-speed;
-            @include action-button-states
-        }
-
-        @include tab-breakpoint(){
-            display: none !important;
-        }
-
-    }
-    &.light{
-        background-color: #B76E79;
-    }
-    &.dark{
+    .left_section {
+      a {
         color: $dark-crayola;
-        background-color: white;
-        @include mobile-breakpoint(){
-            background-color: white;
-        }
-        .mobile_hamburger{
-            rect{
-                fill: black;
-            }
-        }
-
-        .left_section{
-            a{
-                color: $dark-crayola;
-
-            }
-        }
-
-        .right_section{
-
-            & > div a{
-                color: $dark-crayola;
-            }
-            .reservation_button{
-                color: #FFFFFF;
-                background: $dark-crayola;
-                &:hover{
-                    color: $dark-crayola;
-                    background: white;
-                }
-                &:active{
-                    color: #FFFFFF;
-                    background: black;
-                }
-            }
-        }
+      }
     }
 
-    
+    .right_section {
+      & > div a {
+        color: $dark-crayola;
+      }
+      .reservation_button {
+        color: #ffffff;
+        background: $dark-crayola;
+        &:hover {
+          color: $dark-crayola;
+          background: white;
+        }
+        &:active {
+          color: #ffffff;
+          background: black;
+        }
+      }
+    }
+  }
 }
